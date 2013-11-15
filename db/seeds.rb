@@ -55,7 +55,8 @@ f4 = p4.fingerprints.create
 f1.create_fingerprint_database(name: 'Criminal Fingerprints', owner: 'New York Police Department')
 f2_fbi.create_fingerprint_database(name: 'Integrated Automated Fingerprint Identification System', owner: 'Federal Bureau of Investigation')
 f2_cpd.create_fingerprint_database(name: 'Fingerprints of Criminals', owner: 'Chicago Police Department')
-f3.create_fingerprint_database(name: 'Integrated Automated Fingerprint Identification System', owner: 'Federal Bureau of Investigation')
+f3.fingerprint_database = FingerprintDatabase.where(name: 'Integrated Automated Fingerprint Identification System').first
+f3.save
 f4.create_fingerprint_database(name: 'Flatiron School', owner: 'Central Intelligence Agency')
 
 # Make sure the fingerprints keep their database ID
