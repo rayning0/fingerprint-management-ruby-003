@@ -4,7 +4,9 @@ describe "Person" do
 
   describe "::with_history_of" do
     it "should return people with a history of the given incident" do
-      robbers = Person.with_history_of("Armed Robbery")
+      incident_type = IncidentType.where(name: "Armed Robbery").first
+      robbers = Person.with_history_of(incident_type)
+
       robbers.count.should == 2
       robbers.should include(@kelvin_martin)
       robbers.should include(@john_dillinger)
