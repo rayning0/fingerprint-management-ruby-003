@@ -103,5 +103,11 @@ RSpec.configure do |config|
     f2_cpd.save
     f3.save
     f4.save
+
+    fs1.fingerprints << f1
+    fs2.fingerprints << f1
+    fs2.fingerprints << f2
+    fs3.fingerprints << f3
+    fs3.fingerprints << f4
   end
 end
