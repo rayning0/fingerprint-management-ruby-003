@@ -7,7 +7,9 @@ describe "Fingerprint" do
       robbers.count.should == 2
 
       CriminalHistory.where(incident_type: "Armed Robbery").each do |ch|
-        robbers.should include(ch.person)
+        ch.person.fingerprints.each do |fingerprint|
+          robbers.should include(fingerprint)
+        end
       end
     end
   end
