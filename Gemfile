@@ -7,6 +7,10 @@ gem 'rails', '3.2.15'
 
 gem 'sqlite3'
 
+group :test, :development do
+  gem 'pry'
+end
+
 group :test do
   gem 'rspec-rails'
 end
