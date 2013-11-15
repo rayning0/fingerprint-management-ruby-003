@@ -1,7 +1,35 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+p1 = Person.create(first_name: 'Kelvin', last_name: 'Martin')
+p2 = Person.create(first_name: 'Al',     last_name: 'Capone')
+p3 = Person.create(first_name: 'John',   last_name: 'Dillinger')
+
+[
+  {incident_type: 'Armed Robbery'},
+  {incident_type: 'First Degree Murder'}
+].each do |ch_hash|
+  p1.criminal_histories.create(ch_hash)
+end
+
+[
+  {incident_type: 'Income Tax Evasion'},
+  {incident_type: 'Violation of the Volstead Act'}
+].each do |ch_hash|
+  p2.criminal_histories.create(ch_hash)
+end
+
+[
+  {incident_type: 'Armed Robbery'},
+  {incident_type: 'Manslaughter'},
+  {incident_type: 'First Degree Murder'}
+].each do |ch_hash|
+  p3.criminal_histories.create(ch_hash)
+end
+
+f1 = p1.fingerprints.create
+f2_fbi = p2.fingerprints.create
+f2_cpd = p2.fingerprints.create
+f3 = p3.fingerprints.create
+
+f1.create_fingerprint_database(name: 'Criminal Fingerprints', owner: 'New York Police Department')
+f2_fbi.create_fingerprint_database(name: 'Most Wanted List', owner: 'Federal Bureau of Investigations')
+f2_cpd.create_fingerprint_database(name: 'Fingerprints of Criminals', owner: 'Chicago Police Department')
+f3.create_fingerprint_database(name: 'Bandits and Outlaws', owner: 'Federal Bureau of Investigations')
