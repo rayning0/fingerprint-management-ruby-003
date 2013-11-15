@@ -79,9 +79,9 @@ RSpec.configure do |config|
     f4 = @jon_grover.fingerprints.create
 
     f1.create_fingerprint_database(name: 'Criminal Fingerprints', owner: 'New York Police Department')
-    f2_fbi.create_fingerprint_database(name: 'Most Wanted List', owner: 'Federal Bureau of Investigations')
+    f2_fbi.create_fingerprint_database(name: 'Integrated Automated Fingerprint Identification System', owner: 'Federal Bureau of Investigations')
     f2_cpd.create_fingerprint_database(name: 'Fingerprints of Criminals', owner: 'Chicago Police Department')
-    f3.create_fingerprint_database(name: 'Bandits and Outlaws', owner: 'Federal Bureau of Investigations')
+    f3.create_fingerprint_database(name: 'Integrated Automated Fingerprint Identification System', owner: 'Federal Bureau of Investigations')
     f4.create_fingerprint_database(name: 'Flatiron School', owner: 'Central Intelligence Agency')
 
     # Make sure the fingerprints keep their database ID
