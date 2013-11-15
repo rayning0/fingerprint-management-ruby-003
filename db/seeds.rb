@@ -70,7 +70,8 @@ fs2 = FingerprintScanner.create(location: 'Quantico')
 fs3 = FingerprintScanner.create(location: 'New York')
 
 fs1.fingerprints << f1
+fs1.fingerprints << f2_cpd
 fs2.fingerprints << f1
-fs2.fingerprints << f2
+fs2.fingerprints << f2_fbi
 fs3.fingerprints << f3
 fs3.fingerprints << f4

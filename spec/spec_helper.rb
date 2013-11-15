@@ -105,8 +105,9 @@ RSpec.configure do |config|
     f4.save
 
     fs1.fingerprints << f1
+    fs1.fingerprints << f2_cpd
     fs2.fingerprints << f1
-    fs2.fingerprints << f2
+    fs2.fingerprints << f2_fbi
     fs3.fingerprints << f3
     fs3.fingerprints << f4
   end
