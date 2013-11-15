@@ -3,7 +3,7 @@
   languages: ruby
 ---
 
-# Finger Print System
+# Fingerprint Management
 A lab based on the following schema: [Fingerprint Recognition](http://www.databaseanswers.org/data_models/fingerprint_recognition/index.htm)
 
 From the link above:
