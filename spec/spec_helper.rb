@@ -104,6 +104,10 @@ RSpec.configure do |config|
     f3.save
     f4.save
 
+    fs1 = FingerprintScanner.create(location: 'Chicago')
+    fs2 = FingerprintScanner.create(location: 'Quantico')
+    fs3 = FingerprintScanner.create(location: 'New York')
+
     fs1.fingerprints << f1
     fs1.fingerprints << f2_cpd
     fs2.fingerprints << f1
