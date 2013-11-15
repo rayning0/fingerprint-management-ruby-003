@@ -22,6 +22,11 @@ describe "Person" do
   end
 
   describe "::fbi_tracked_robbers" do
-    it "should return robbers in an FBI database"
+    it "should return robbers in an FBI database" do
+      robbers_tracked_by_fbi = Person.fbi_tracked_robbers
+
+      robbers_tracked_by_fbi.count.should == 1
+      robbers_tracked_by_fbi.should include(@john_dillinger)
+    end
   end
 end
