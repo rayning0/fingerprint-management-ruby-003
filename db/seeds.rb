@@ -4,33 +4,46 @@ p3 = Person.create(first_name: 'John',   last_name: 'Dillinger')
 p4 = Person.create(first_name: 'Jon',   last_name: 'Grover')
 
 [
-  {incident_type: 'Armed Robbery'},
-  {incident_type: 'First Degree Murder'}
-].each do |ch_hash|
-  p1.criminal_histories.create(ch_hash)
+  { name: 'Armed Robbery' },
+  { name: 'First Degree Murder' },
+  { name: 'Income Tax Evasion' },
+  { name: 'Violation of the Volstead Act' },
+  { name: 'Manslaughter' },
+  { name: 'Being Way Too Fly' },
+  { name: 'Using AJAX Without a License' },
+  { name: 'Pollywog Fighting' }
+].each do |it_hash|
+  IncidentType.create(it_hash)
 end
 
 [
-  {incident_type: 'Income Tax Evasion'},
-  {incident_type: 'Violation of the Volstead Act'}
-].each do |ch_hash|
-  p2.criminal_histories.create(ch_hash)
+  IncidentType.where(name: 'Armed Robbery').first,
+  IncidentType.where(name: 'First Degree Murder').first
+].each do |incident_type|
+  p1.criminal_histories.create(incident_type: incident_type)
 end
 
 [
-  {incident_type: 'Armed Robbery'},
-  {incident_type: 'Manslaughter'},
-  {incident_type: 'First Degree Murder'}
-].each do |ch_hash|
-  p3.criminal_histories.create(ch_hash)
+  IncidentType.where(name: 'Income Tax Evasion').first,
+  IncidentType.where(name: 'Violation of the Volstead Act').first
+].each do |incident_type|
+  p2.criminal_histories.create(incident_type: incident_type)
 end
 
 [
-  {incident_type: 'Being Way Too Fly'},
-  {incident_type: 'Using AJAX Without a License'},
-  {incident_type: 'Pollywog Fighting'}
-].each do |ch_hash|
-  p4.criminal_histories.create(ch_hash)
+  IncidentType.where(name: 'Armed Robbery').first,
+  IncidentType.where(name: 'Manslaughter').first,
+  IncidentType.where(name: 'First Degree Murder').first
+].each do |incident_type|
+  p3.criminal_histories.create(incident_type: incident_type)
+end
+
+[
+  IncidentType.where(name: 'Being Way Too Fly').first,
+  IncidentType.where(name: 'Using AJAX Without a License').first,
+  IncidentType.where(name: 'Pollywog Fighting').first
+].each do |incident_type|
+  p4.criminal_histories.create(incident_type: incident_type)
 end
 
 f1 = p1.fingerprints.create

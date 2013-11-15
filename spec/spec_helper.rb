@@ -37,46 +37,59 @@ RSpec.configure do |config|
   config.order = "random"
 
   config.before do
-    @kelvin_martin = Person.create(first_name: 'Kelvin', last_name: 'Martin')
-    @al_capone = Person.create(first_name: 'Al',     last_name: 'Capone')
-    @john_dillinger = Person.create(first_name: 'John',   last_name: 'Dillinger')
-    @jon_grover = Person.create(first_name: 'Jon',   last_name: 'Grover')
+    p1 = Person.create(first_name: 'Kelvin', last_name: 'Martin')
+    p2 = Person.create(first_name: 'Al',     last_name: 'Capone')
+    p3 = Person.create(first_name: 'John',   last_name: 'Dillinger')
+    p4 = Person.create(first_name: 'Jon',   last_name: 'Grover')
 
     [
-      {incident_type: 'Armed Robbery'},
-      {incident_type: 'First Degree Murder'}
-    ].each do |ch_hash|
-      @kelvin_martin.criminal_histories.create(ch_hash)
+      { name: 'Armed Robbery' },
+      { name: 'First Degree Murder' },
+      { name: 'Income Tax Evasion' },
+      { name: 'Violation of the Volstead Act' },
+      { name: 'Manslaughter' },
+      { name: 'Being Way Too Fly' },
+      { name: 'Using AJAX Without a License' },
+      { name: 'Pollywog Fighting' }
+    ].each do |it_hash|
+      IncidentType.create(it_hash)
     end
 
     [
-      {incident_type: 'Income Tax Evasion'},
-      {incident_type: 'Violation of the Volstead Act'}
-    ].each do |ch_hash|
-      @al_capone.criminal_histories.create(ch_hash)
+      IncidentType.where(name: 'Armed Robbery').first,
+      IncidentType.where(name: 'First Degree Murder').first
+    ].each do |incident_type|
+      p1.criminal_histories.create(incident_type: incident_type)
     end
 
     [
-      {incident_type: 'Armed Robbery'},
-      {incident_type: 'Manslaughter'},
-      {incident_type: 'First Degree Murder'}
-    ].each do |ch_hash|
-      @john_dillinger.criminal_histories.create(ch_hash)
+      IncidentType.where(name: 'Income Tax Evasion').first,
+      IncidentType.where(name: 'Violation of the Volstead Act').first
+    ].each do |incident_type|
+      p2.criminal_histories.create(incident_type: incident_type)
     end
 
     [
-      {incident_type: 'Being Way Too Fly'},
-      {incident_type: 'Using AJAX Without a License'},
-      {incident_type: 'Pollywog Fighting'}
-    ].each do |ch_hash|
-      @jon_grover.criminal_histories.create(ch_hash)
+      IncidentType.where(name: 'Armed Robbery').first,
+      IncidentType.where(name: 'Manslaughter').first,
+      IncidentType.where(name: 'First Degree Murder').first
+    ].each do |incident_type|
+      p3.criminal_histories.create(incident_type: incident_type)
     end
 
-    f1 = @kelvin_martin.fingerprints.create
-    f2_fbi = @al_capone.fingerprints.create
-    f2_cpd = @al_capone.fingerprints.create
-    f3 = @john_dillinger.fingerprints.create
-    f4 = @jon_grover.fingerprints.create
+    [
+      IncidentType.where(name: 'Being Way Too Fly').first,
+      IncidentType.where(name: 'Using AJAX Without a License').first,
+      IncidentType.where(name: 'Pollywog Fighting').first
+    ].each do |incident_type|
+      p4.criminal_histories.create(incident_type: incident_type)
+    end
+
+    f1 = p1.fingerprints.create
+    f2_fbi = p2.fingerprints.create
+    f2_cpd = p2.fingerprints.create
+    f3 = p3.fingerprints.create
+    f4 = p4.fingerprints.create
 
     f1.create_fingerprint_database(name: 'Criminal Fingerprints', owner: 'New York Police Department')
     f2_fbi.create_fingerprint_database(name: 'Integrated Automated Fingerprint Identification System', owner: 'Federal Bureau of Investigation')
