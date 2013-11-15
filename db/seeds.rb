@@ -44,3 +44,10 @@ f2_fbi.create_fingerprint_database(name: 'Most Wanted List', owner: 'Federal Bur
 f2_cpd.create_fingerprint_database(name: 'Fingerprints of Criminals', owner: 'Chicago Police Department')
 f3.create_fingerprint_database(name: 'Bandits and Outlaws', owner: 'Federal Bureau of Investigations')
 f4.create_fingerprint_database(name: 'Flatiron School', owner: 'Central Intelligence Agency')
+
+# Make sure the fingerprints keep their database ID
+f1.save
+f2_fbi.save
+f2_cpd.save
+f3.save
+f4.save
