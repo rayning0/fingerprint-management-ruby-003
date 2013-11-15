@@ -13,4 +13,5 @@ Poke around the rest of the data models, it's fun times!
 Fork this repository and deliver your work in the master branch.
 
 ## Instructions
+Make liberal use of the [Active Record Query Interface Guide](http://guides.rubyonrails.org/active_record_querying.html).
 Get all the tests to pass!
