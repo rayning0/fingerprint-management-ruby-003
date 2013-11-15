@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131115210141) do
+ActiveRecord::Schema.define(:version => 20131115194643) do
 
   create_table "criminal_histories", :force => true do |t|
     t.integer "person_id"
@@ -50,10 +50,10 @@ ActiveRecord::Schema.define(:version => 20131115210141) do
 
   create_table "scanned_fingerprints", :force => true do |t|
     t.integer "fingerprint_scanner_id"
-    t.integer "finger_print_id"
+    t.integer "fingerprint_id"
   end
 
-  add_index "scanned_fingerprints", ["finger_print_id"], :name => "index_scanned_fingerprints_on_finger_print_id"
+  add_index "scanned_fingerprints", ["fingerprint_id"], :name => "index_scanned_fingerprints_on_fingerprint_id"
   add_index "scanned_fingerprints", ["fingerprint_scanner_id"], :name => "index_scanned_fingerprints_on_fingerprint_scanner_id"
 
 end
