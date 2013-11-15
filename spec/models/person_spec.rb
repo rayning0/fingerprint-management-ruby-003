@@ -28,5 +28,12 @@ describe "Person" do
       robbers_tracked_by_fbi.count.should == 1
       robbers_tracked_by_fbi.should include(@john_dillinger)
     end
+
+    it "should use the tracked_by and with_history_if methods" do
+      Person.should_receive(:with_history_of) { Person }
+      Person.should_receive(:tracked_by) { Person }
+
+      Person.fbi_tracked_robbers
+    end
   end
 end
