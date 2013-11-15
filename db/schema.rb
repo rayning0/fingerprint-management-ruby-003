@@ -11,13 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131114214611) do
+ActiveRecord::Schema.define(:version => 20131115194643) do
 
   create_table "criminal_histories", :force => true do |t|
     t.integer "person_id"
-    t.string  "incident_type"
+    t.integer "incident_type_id"
   end
 
+  add_index "criminal_histories", ["incident_type_id"], :name => "index_criminal_histories_on_incident_type_id"
   add_index "criminal_histories", ["person_id"], :name => "index_criminal_histories_on_person_id"
 
   create_table "fingerprint_databases", :force => true do |t|
@@ -37,6 +38,10 @@ ActiveRecord::Schema.define(:version => 20131114214611) do
 
   add_index "fingerprints", ["fingerprint_database_id"], :name => "index_fingerprints_on_database_id"
   add_index "fingerprints", ["person_id"], :name => "index_fingerprints_on_person_id"
+
+  create_table "incident_types", :force => true do |t|
+    t.string "name"
+  end
 
   create_table "people", :force => true do |t|
     t.string "first_name"
