@@ -16,9 +16,9 @@ describe "Fingerprint" do
     end
   end
 
-  describe "::unknown_people" do
+  describe "::of_unknown_people" do
     it "should return fingerprints without an associated person" do
-      Fingerprint.unknown_people.count.should == 2
+      Fingerprint.of_unknown_people.count.should == 2
     end
   end
 
