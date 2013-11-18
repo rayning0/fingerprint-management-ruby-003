@@ -21,4 +21,20 @@ describe "Fingerprint" do
       Fingerprint.unknown_people.count.should == 2
     end
   end
+
+  describe "::early_twentieth_century" do
+    it "should return the fingerprints from the early 20th century" do
+      fingerprints = Fingerprint.early_twentieth_century
+
+      fingerprints.count.should == 3
+
+      @al_capone.fingerprints.each do |fingerprint|
+        fingerprints.should include(fingerprint)
+      end
+
+      @john_dillinger.fingerprints.each do |fingerprint|
+        fingerprints.should include(fingerprint)
+      end
+    end
+  end
 end

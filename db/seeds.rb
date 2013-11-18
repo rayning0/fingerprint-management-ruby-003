@@ -50,7 +50,7 @@ f1 = @kelvin_martin.fingerprints.create(taken_at: DateTime.new(1983, 12, 15))
 f2_fbi = @al_capone.fingerprints.create(taken_at: DateTime.new(1923, 3, 4))
 f2_cpd = @al_capone.fingerprints.create(taken_at: DateTime.new(1922, 5, 16))
 f3 = @john_dillinger.fingerprints.create(taken_at: DateTime.new(1930, 8, 23))
-f4 = @jon_grover.fingerprints.create(taken_at: Time.now)
+f4 = @jon_grover.fingerprints.create(taken_at: DateTime.new(1776, 7, 4))
 
 f1.create_fingerprint_database(name: 'Criminal Fingerprints', owner: 'New York Police Department')
 f2_fbi.create_fingerprint_database(name: 'Integrated Automated Fingerprint Identification System', owner: 'Federal Bureau of Investigation')
