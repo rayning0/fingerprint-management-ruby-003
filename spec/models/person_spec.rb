@@ -24,13 +24,6 @@ describe "Person" do
   end
 
   describe "::fbi_tracked_robbers" do
-    it "should use the tracked_by and with_history_of methods" do
-      Person.should_receive(:with_history_of) { Person }
-      Person.should_receive(:tracked_by) { Person }
-
-      Person.fbi_tracked_robbers
-    end
-
     it "should return robbers in an FBI database" do
       robbers_tracked_by_fbi = Person.fbi_tracked_robbers
 
