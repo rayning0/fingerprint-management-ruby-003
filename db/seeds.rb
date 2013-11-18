@@ -46,11 +46,11 @@ end
   p4.criminal_histories.create(incident_type: incident_type)
 end
 
-f1 = p1.fingerprints.create
-f2_fbi = p2.fingerprints.create
-f2_cpd = p2.fingerprints.create
-f3 = p3.fingerprints.create
-f4 = p4.fingerprints.create
+f1 = p1.fingerprints.create(taken_at: DateTime.new(1983, 12, 15))
+f2_fbi = p2.fingerprints.create(taken_at: DateTime.new(1923, 3, 4))
+f2_cpd = p2.fingerprints.create(taken_at: DateTime.new(1922, 5, 16))
+f3 = p3.fingerprints.create(taken_at: DateTime.new(1930, 8, 23))
+f4 = p4.fingerprints.create(taken_at: Time.now)
 
 f1.create_fingerprint_database(name: 'Criminal Fingerprints', owner: 'New York Police Department')
 f2_fbi.create_fingerprint_database(name: 'Integrated Automated Fingerprint Identification System', owner: 'Federal Bureau of Investigation')

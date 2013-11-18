@@ -1,4 +1,6 @@
 class Fingerprint < ActiveRecord::Base
+  attr_accessible :taken_at
+
   has_many :scanned_fingerprints
   has_many :fingerprint_scanners, through: :scanned_fingerprints
 
