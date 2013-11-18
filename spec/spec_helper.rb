@@ -103,7 +103,7 @@ RSpec.configure do |config|
 
     # Fingerprints without people
     iafis.fingerprints.create
-    iafis.fingerprints.create
+    f2_cpd.fingerprint_database.fingerprints.create
 
     # Make sure the fingerprints keep their database ID
     f1.save

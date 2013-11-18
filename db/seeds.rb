@@ -64,7 +64,7 @@ f4.create_fingerprint_database(name: 'Flatiron School', owner: 'Central Intellig
 
 # Fingerprints without people
 iafis.fingerprints.create
-iafis.fingerprints.create
+f2_cpd.fingerprint_database.fingerprints.create
 
 # Make sure the fingerprints keep their database ID
 f1.save
