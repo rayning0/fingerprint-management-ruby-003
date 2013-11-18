@@ -1,7 +1,7 @@
-p1 = Person.create(first_name: 'Kelvin', last_name: 'Martin')
-p2 = Person.create(first_name: 'Al',     last_name: 'Capone')
-p3 = Person.create(first_name: 'John',   last_name: 'Dillinger')
-p4 = Person.create(first_name: 'Jon',   last_name: 'Grover')
+@kelvin_martin = Person.create(first_name: 'Kelvin', last_name: 'Martin')
+@al_capone = Person.create(first_name: 'Al',     last_name: 'Capone')
+@john_dillinger = Person.create(first_name: 'John',   last_name: 'Dillinger')
+@jon_grover = Person.create(first_name: 'Jon',   last_name: 'Grover')
 
 [
   { name: 'Armed Robbery' },
@@ -20,14 +20,14 @@ end
   IncidentType.where(name: 'Armed Robbery').first,
   IncidentType.where(name: 'First Degree Murder').first
 ].each do |incident_type|
-  p1.criminal_histories.create(incident_type: incident_type)
+  @kelvin_martin.criminal_histories.create(incident_type: incident_type)
 end
 
 [
   IncidentType.where(name: 'Income Tax Evasion').first,
   IncidentType.where(name: 'Violation of the Volstead Act').first
 ].each do |incident_type|
-  p2.criminal_histories.create(incident_type: incident_type)
+  @al_capone.criminal_histories.create(incident_type: incident_type)
 end
 
 [
@@ -35,7 +35,7 @@ end
   IncidentType.where(name: 'Manslaughter').first,
   IncidentType.where(name: 'First Degree Murder').first
 ].each do |incident_type|
-  p3.criminal_histories.create(incident_type: incident_type)
+  @john_dillinger.criminal_histories.create(incident_type: incident_type)
 end
 
 [
@@ -43,14 +43,14 @@ end
   IncidentType.where(name: 'Using AJAX Without a License').first,
   IncidentType.where(name: 'Pollywog Fighting').first
 ].each do |incident_type|
-  p4.criminal_histories.create(incident_type: incident_type)
+  @jon_grover.criminal_histories.create(incident_type: incident_type)
 end
 
-f1 = p1.fingerprints.create(taken_at: DateTime.new(1983, 12, 15))
-f2_fbi = p2.fingerprints.create(taken_at: DateTime.new(1923, 3, 4))
-f2_cpd = p2.fingerprints.create(taken_at: DateTime.new(1922, 5, 16))
-f3 = p3.fingerprints.create(taken_at: DateTime.new(1930, 8, 23))
-f4 = p4.fingerprints.create(taken_at: Time.now)
+f1 = @kelvin_martin.fingerprints.create(taken_at: DateTime.new(1983, 12, 15))
+f2_fbi = @al_capone.fingerprints.create(taken_at: DateTime.new(1923, 3, 4))
+f2_cpd = @al_capone.fingerprints.create(taken_at: DateTime.new(1922, 5, 16))
+f3 = @john_dillinger.fingerprints.create(taken_at: DateTime.new(1930, 8, 23))
+f4 = @jon_grover.fingerprints.create(taken_at: Time.now)
 
 f1.create_fingerprint_database(name: 'Criminal Fingerprints', owner: 'New York Police Department')
 f2_fbi.create_fingerprint_database(name: 'Integrated Automated Fingerprint Identification System', owner: 'Federal Bureau of Investigation')
