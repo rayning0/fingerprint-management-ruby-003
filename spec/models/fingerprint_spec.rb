@@ -23,7 +23,7 @@ describe "Fingerprint" do
   end
 
   describe "::early_twentieth_century" do
-    it "should return the fingerprints from the early 20th century" do
+    it "should return fingerprints taken between 1900 and 1930" do
       fingerprints = Fingerprint.early_twentieth_century
 
       fingerprints.count.should == 3
