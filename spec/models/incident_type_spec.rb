@@ -7,6 +7,8 @@ describe "IncidentType" do
 
   describe "#average_age_of_offenders" do
     it "should return the average age of people with a history of the incident" do
+      # Use the SQL AVERAGE keyword (using arel)
+
       armed_robbery = IncidentType.where(name: 'Armed Robbery').first
 
       armed_robbery.average_age_of_offenders.to_f.should == 27.0
