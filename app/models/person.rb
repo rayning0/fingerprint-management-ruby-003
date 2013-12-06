@@ -1,5 +1,5 @@
 class Person < ActiveRecord::Base
-  attr_accessible :first_name, :last_name
+  attr_accessible :first_name, :last_name, :age
 
   has_many :fingerprints
   has_many :fingerprint_databases, through: :fingerprints
