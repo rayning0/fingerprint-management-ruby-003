@@ -37,10 +37,10 @@ RSpec.configure do |config|
   config.order = "random"
 
   config.before do
-    @kelvin_martin = Person.create(first_name: 'Kelvin', last_name: 'Martin')
-    @al_capone = Person.create(first_name: 'Al',     last_name: 'Capone')
-    @john_dillinger = Person.create(first_name: 'John',   last_name: 'Dillinger')
-    @jon_grover = Person.create(first_name: 'Jon',   last_name: 'Grover')
+    @kelvin_martin = Person.create(first_name: 'Kelvin', last_name: 'Martin', age: 23)
+    @al_capone = Person.create(first_name: 'Al',     last_name: 'Capone', age: 48)
+    @john_dillinger = Person.create(first_name: 'John',   last_name: 'Dillinger', age: 31)
+    @jon_grover = Person.create(first_name: 'Jon',   last_name: 'Grover', age: 28)
 
     [
       { name: 'Armed Robbery' },
