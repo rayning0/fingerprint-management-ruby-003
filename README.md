@@ -28,3 +28,6 @@ You should ONLY use Active Record query methods. No `each`, no `map`,
 etc. 
 
 Get all the tests to pass!
+
+**NOTE**: This application uses Rails 3, so there may be some minor
+differences in the ActiveRecord API!
